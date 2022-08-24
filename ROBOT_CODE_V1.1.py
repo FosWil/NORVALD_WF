@@ -39,14 +39,20 @@ motor_serial.run()
 # #sensor 2 (right) and 3 (left) are used when sensor 1 meets an obstacle
 #sensor 4 (back) is used when sensor 2 and 3 fail, or if there is no opening to either side
 
+while not motor_serial.shutdown_now:
+    
 
+# motor_serial has told us that its time to exit
+# we have now exited the loop
+# It's only polite to say goodbye
+print("Goodbye")
 
-dist_1 = motor_serial.get_dist_1()
-dist_2 = motor_serial.get_dist_2()
-dist_3 = motor_serial.get_dist_3()
-dist_4 = motor_serial.get_dist_4()
+    dist_1 = motor_serial.get_dist_1()
+    dist_2 = motor_serial.get_dist_2()
+    dist_3 = motor_serial.get_dist_3()
+    dist_4 = motor_serial.get_dist_4()
 
-print("Dist 1:", dist_1, " Dist 2:", dist_2, " Dist 3:", dist_3, " dist_4:", dist_4)
+    print("Dist 1:", dist_1, " Dist 2:", dist_2, " Dist 3:", dist_3, " dist_4:", dist_4)
 
 
 
@@ -156,10 +162,3 @@ else:
 # The motor_serial object will inform us when it's time to exit the program
 # (say if the program is terminated by the user)
 print("Entering loop. Ctrl+c to terminate")
-while not motor_serial.shutdown_now:
- pass
-
-# motor_serial has told us that its time to exit
-# we have now exited the loop
-# It's only polite to say goodbye
-print("Goodbye")
